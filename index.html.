@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Jan Fashion | ร้านเสื้อผ้าแฟชั่น</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, "Noto Sans Thai", sans-serif;
+    }
+
+    body {
+      background: #fff8fb;
+      color: #333;
+    }
+
+    /* NAVBAR */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: white;
+      padding: 16px 6%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: bold;
+      color: #e83e8c;
+    }
+
+    .logo span {
+      color: #333;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 25px;
+      list-style: none;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #444;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: #e83e8c;
+    }
+
+    .cart {
+      background: #e83e8c;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      padding: 10px 17px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 570px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 60px 8%;
+      background: linear-gradient(135deg, #ffe1ed, #fff7fa);
+      gap: 30px;
+    }
+
+    .hero-text {
+      max-width: 550px;
+    }
+
+    .hero-text small {
+      color: #e83e8c;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .hero-text h1 {
+      font-size: 55px;
+      margin: 15px 0;
+      line-height: 1.1;
+    }
+
+    .hero-text h1 span {
+      color: #e83e8c;
+    }
+
+    .hero-text p {
+      font-size: 18px;
+      color: #666;
+      line-height: 1.8;
+      margin-bottom: 25px;
+    }
+
+    .shop-btn {
+      display: inline-block;
+      background: #e83e8c;
+      color: white;
+      padding: 14px 28px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 8px 20px rgba(232,62,140,0.25);
+    }
+
+    .hero-image {
+      width: 430px;
+      height: 500px;
+      border-radius: 30px;
+      overflow: hidden;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* SECTION */
+    section {
+      padding: 70px 7%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .section-title h2 {
+      font-size: 32px;
+      margin-bottom: 8px;
+    }
+
+    .section-title p {
+      color: #777;
+    }
+
+    /* SEARCH */
+    .search-box {
+      max-width: 500px;
+      margin: 0 auto 35px;
+      display: flex;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 14px 20px;
+      border: 1px solid #ddd;
+      border-radius: 30px;
+      outline: none;
+      font-size: 15px;
+    }
+
+    /* PRODUCTS */
+    .products {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 25px;
+    }
+
+    .product {
+      background: white;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+      transition: 0.3s;
+    }
+
+    .product:hover {
+      transform: translateY(-6px);
+    }
+
+    .product img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+    }
+
+    .product-info {
+      padding: 18px;
+    }
+
+    .product-info h3 {
+      margin-bottom: 8px;
+    }
+
+    .product-info p {
+      color: #e83e8c;
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 12px;
+    }
+
+    .add-btn {
+      width: 100%;
+      border: none;
+      background: #ffe1ed;
+      color: #d62f7c;
+      padding: 11px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .add-btn:hover {
+      background: #e83e8c;
+      color: white;
+    }
+
+    /* ABOUT */
+    .about {
+      background: #fff0f6;
+      text-align: center;
+    }
+
+    .about-content {
+      max-width: 750px;
+      margin: auto;
+      line-height: 1.9;
+      color: #555;
+      font-size: 17px;
+    }
+
+    /* CONTACT */
+    .contact {
+      text-align: center;
+    }
+
+    .contact-card {
+      max-width: 550px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+    }
+
+    .contact-card p {
+      margin: 12px 0;
+    }
+
+    .line-btn {
+      display: inline-block;
+      margin-top: 15px;
+      background: #06c755;
+      color: white;
+      padding: 12px 25px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 25px;
+    }
+
+    /* MOBILE */
+    @media (max-width: 900px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 45px 6%;
+      }
+
+      .hero-text h1 {
+        font-size: 42px;
+      }
+
+      .hero-image {
+        width: 100%;
+        max-width: 400px;
+        height: 420px;
+      }
+
+      .products {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      nav ul {
+        display: none;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .products {
+        grid-template-columns: 1fr;
+      }
+
+      .product img {
+        height: 330px;
+      }
+
+      .hero-text h1 {
+        font-size: 36px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <div class="logo">
+      Jan <span>Fashion</span>
+    </div>
+
+    <ul>
+      <li><a href="#home">หน้าแรก</a></li>
+      <li><a href="#products">สินค้า</a></li>
+      <li><a href="#about">เกี่ยวกับเรา</a></li>
+      <li><a href="#contact">ติดต่อเรา</a></li>
+    </ul>
+
+    <button class="cart" onclick="showCart()">
+      🛒 ตะกร้า (<span id="cartCount">0</span>)
+    </button>
+  </nav>
+
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+
+    <div class="hero-text">
+      <small>WELCOME TO JAN FASHION</small>
+
+      <h1>
+        แต่งตัวให้เป็นตัวคุณ<br>
+        กับ <span>Jan Fashion</span>
+      </h1>
+
+      <p>
+        เสื้อผ้าแฟชั่นสไตล์น่ารัก ทันสมัย
+        คัดสรรมาให้คุณในราคาที่เข้าถึงง่าย
+        ช้อปง่าย ได้ลุคที่ใช่สำหรับทุกวัน
+      </p>
+
+      <a href="#products" class="shop-btn">
+        🛍️ เลือกซื้อสินค้า
+      </a>
+    </div>
+
+    <div class="hero-image">
+      <img
+        src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=900&q=80"
+        alt="Jan Fashion">
+    </div>
+
+  </section>
+
+
+  <!-- PRODUCTS -->
+  <section id="products">
+
+    <div class="section-title">
+      <h2>✨ สินค้าแนะนำ</h2>
+      <p>เลือกสไตล์ที่ใช่สำหรับคุณ</p>
+    </div>
+
+    <div class="search-box">
+      <input
+        type="text"
+        id="search"
+        placeholder="🔍 ค้นหาสินค้า..."
+        onkeyup="searchProduct()">
+    </div>
+
+    <div class="products">
+
+      <div class="product">
+        <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=700&q=80">
+        <div class="product-info">
+          <h3>เดรสแฟชั่นชมพู</h3>
+          <p>฿490</p>
+          <button class="add-btn" onclick="addCart()">
+            เพิ่มลงตะกร้า
+          </button>
+        </div>
+      </div>
+
+      <div class="product">
+        <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=700&q=80">
+        <div class="product-info">
+          <h3>เสื้อแฟชั่นมินิมอล</h3>
+          <p>฿350</p>
+          <button class="add-btn" onclick="addCart()">
+            เพิ่มลงตะกร้า
+          </button>
+        </div>
+      </div>
+
+      <div class="product">
+        <img src="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=700&q=80">
+        <div class="product-info">
+          <h3>เสื้อเชิ้ตแฟชั่น</h3>
+          <p>฿420</p>
+          <button class="add-btn" onclick="addCart()">
+            เพิ่มลงตะกร้า
+          </button>
+        </div>
+      </div>
+
+      <div class="product">
+        <img src="https://images.unsplash.com/photo-1581044777550-4cfa60707c03?auto=format&fit=crop&w=700&q=80">
+        <div class="product-info">
+          <h3>เดรสหวานละมุน</h3>
+          <p>฿590</p>
+          <button class="add-btn" onclick="addCart()">
+            เพิ่มลงตะกร้า
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+
+    <div class="section-title">
+      <h2>💗 เกี่ยวกับ Jan Fashion</h2>
+    </div>
+
+    <div class="about-content">
+      Jan Fashion คือร้านเสื้อผ้าแฟชั่นที่ต้องการนำเสนอ
+      เสื้อผ้าที่สวย น่ารัก และทันสมัย
+      ให้ลูกค้าสามารถเลือกซื้อสินค้าได้ง่าย
+      พร้อมสร้างสไตล์ที่เป็นตัวของตัวเอง
+    </div>
+
+  </section>
+
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+
+    <div class="section-title">
+      <h2>📞 ติดต่อเรา</h2>
+      <p>สอบถามข้อมูลสินค้าได้ตลอด</p>
+    </div>
+
+    <div class="contact-card">
+
+      <p>💬 Line Official Account</p>
+      <p>📱 โทร: 065-029-9750</p>
+
+      <a
+        class="line-btn"
+        href="https://lin.ee/ty09wiQ3"
+        target="_blank">
+        💚 ติดต่อผ่าน LINE
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Jan Fashion | เว็บไซต์ร้านเสื้อผ้าแฟชั่น</p>
+  </footer>
+
+
+  <!-- JAVASCRIPT -->
+  <script>
+
+    let cart = 0;
+
+    function addCart() {
+      cart++;
+      document.getElementById("cartCount").innerText = cart;
+
+      alert("เพิ่มสินค้าลงในตะกร้าแล้ว 🛍️");
+    }
+
+    function showCart() {
+      if (cart === 0) {
+        alert("ตอนนี้ยังไม่มีสินค้าในตะกร้า 🛒");
+      } else {
+        alert("คุณมีสินค้าในตะกร้า " + cart + " ชิ้น 🛍️");
+      }
+    }
+
+    function searchProduct() {
+
+      const search =
+        document.getElementById("search").value.toLowerCase();
+
+      const products =
+        document.querySelectorAll(".product");
+
+      products.forEach(product => {
+
+        const name =
+          product.querySelector("h3").innerText.toLowerCase();
+
+        if (name.includes(search)) {
+          product.style.display = "";
+        } else {
+          product.style.display = "none";
+        }
+
+      });
+
+    }
+
+  </script>
+
+</body>
+</html>
