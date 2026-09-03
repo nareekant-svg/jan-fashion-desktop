@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+
+<html lang="th"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Jan Fashion - แฟชั่นที่ใช่ สไตล์ที่เป็นคุณ</title>
+<!-- Google Fonts for Thai & Latin Elegance -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&amp;family=Prompt:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#fff5f7',
+              100: '#ffe6eb',
+              200: '#fecdd8',
+              300: '#fda4ba',
+              400: '#fb7195',
+              500: '#f43f6f',
+              600: '#e11d59',
+              700: '#be1247',
+              deep: '#d81b60',
+              accent: '#ff2d75',
+              softbg: '#fff1f4'
+            }
+          },
+          fontFamily: {
+            sans: ['Prompt', 'sans-serif'],
+            serif: ['Playfair Display', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+<!-- Custom Typography and Smooth Tweaks -->
+<style data-purpose="typography">
+    body {
+      font-family: 'Prompt', sans-serif;
+      color: #332d30;
+      background-color: #ffffff;
+      -webkit-font-smoothing: antialiased;
+    }
+    .font-serif-brand {
+      font-family: 'Playfair Display', Georgia, serif;
+    }
+  </style>
+<!-- Custom Decorative Aesthetics -->
+<style data-purpose="decorations">
+    .soft-pink-gradient {
+      background: linear-gradient(135deg, #fff0f3 0%, #ffe1e8 50%, #ffd6e0 100%);
+    }
+    .coupon-border {
+      background-image: radial-gradient(circle at left, transparent 8px, #ffffff 8.5px),
+                        radial-gradient(circle at right, transparent 8px, #ffffff 8.5px);
+      background-size: 100% 100%;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col antialiased">
+<!-- BEGIN: AnnouncementBar -->
+<aside class="bg-[#ffe8ee] text-xs text-stone-600 border-b border-pink-100 py-2" data-purpose="announcement-bar">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-2">
+<!-- Left: Free Shipping Perk -->
+<div class="flex items-center gap-2 font-medium">
+<svg class="w-4 h-4 text-brand-600" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span>จัดส่งฟรีเมื่อสั่งซื้อครบ 990.-</span>
+</div>
+<!-- Right: Tracking, Support & Social Icons -->
+<div class="flex items-center space-x-4">
+<a class="hover:text-brand-600 transition-colors" href="#">ติดตามสถานะการสั่งซื้อ</a>
+<span class="text-pink-300">|</span>
+<a class="hover:text-brand-600 transition-colors" href="#">ช่วยเหลือ</a>
+<span class="text-pink-300">|</span>
+<div class="flex items-center space-x-2.5 text-stone-700">
+<!-- Instagram Icon -->
+<a aria-label="Instagram" class="hover:text-brand-600 transition-colors" href="#" title="Instagram">
+<svg class="w-3.5 h-3.5" fill="currentColor" viewbox="0 0 24 24">
+<path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path>
+</svg>
+</a>
+<!-- TikTok Icon -->
+<a aria-label="TikTok" class="hover:text-brand-600 transition-colors" href="#" title="TikTok">
+<svg class="w-3.5 h-3.5" fill="currentColor" viewbox="0 0 24 24">
+<path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.298-.002.595.042.88.13V9.4a6.33 6.33 0 0 0-1-.08A6.34 6.34 0 0 0 3 15.66a6.34 6.34 0 0 0 10.78 4.54 6.27 6.27 0 0 0 1.86-4.48V8.71a8.17 8.17 0 0 0 4.95 1.67V6.93a4.78 4.78 0 0 1-1-.24z"></path>
+</svg>
+</a>
+<!-- Chat/Line Icon -->
+<a aria-label="Line or Chat" class="hover:text-brand-600 transition-colors" href="#" title="Chat">
+<svg class="w-3.5 h-3.5" fill="currentColor" viewbox="0 0 24 24">
+<path d="M12 2C6.48 2 2 5.92 2 10.75c0 2.88 1.63 5.43 4.14 7.01.2.13.33.36.35.6l.08 2.05a.75.75 0 0 0 1.15.63l2.84-1.72a.84.84 0 0 1 .47-.14c.32.05.65.07.97.07 5.52 0 10-3.92 10-8.75S17.52 2 12 2z"></path>
+</svg>
+</a>
+</div>
+</div>
+</div>
+</aside>
+<!-- END: AnnouncementBar -->
+<!-- BEGIN: MainHeader -->
+<header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-pink-100" data-purpose="primary-navigation">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+<!-- Brand Boutique Logo -->
+<a class="flex items-center gap-3 group" href="#" title="Jan Fashion Home">
+<div class="w-14 h-14 rounded-full border-2 border-brand-300 flex items-center justify-center bg-pink-50/70 p-1 group-hover:border-brand-500 transition-all">
+<div class="text-center flex flex-col items-center leading-none">
+<svg class="w-4 h-4 text-brand-500 mb-0.5" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M12 3a2 2 0 00-2 2c0 .74.4 1.38 1 1.73V8l-7 5.5V16l8-3.5 8 3.5v-2.5L13 8V6.73A2 2 0 0014 5a2 2 0 00-2-2z" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M9 13.5v5.5l3 2 3-2v-5.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="font-serif-brand italic font-bold text-xs text-brand-600">Jan</span>
+<span class="text-[7px] tracking-widest text-stone-500 uppercase font-semibold">fashion</span>
+</div>
+</div>
+<div class="hidden sm:block">
+<span class="font-serif-brand text-2xl font-bold tracking-tight text-brand-600 block leading-tight">Jan Fashion</span>
+<span class="text-[10px] uppercase tracking-[0.25em] text-brand-400 font-medium block">STYLE FOR YOU</span>
+</div>
+</a>
+<!-- Center Nav Links -->
+<nav class="hidden md:flex items-center space-x-7 text-sm font-medium text-stone-700">
+<a class="relative text-brand-600 py-1 font-semibold" href="#">
+          หน้าแรก
+          <span class="absolute bottom-0 left-0 right-0 h-0.5 bg-brand-500 rounded-full"></span>
+</a>
+<a class="hover:text-brand-600 transition-colors py-1" href="#">สินค้าใหม่</a>
+<a class="hover:text-brand-600 transition-colors py-1" href="#">หมวดหมู่สินค้า</a>
+<a class="hover:text-brand-600 transition-colors py-1" href="#">โปรโมชั่น</a>
+<a class="hover:text-brand-600 transition-colors py-1" href="#">รีวิวลูกค้า</a>
+<a class="hover:text-brand-600 transition-colors py-1" href="#">ติดต่อเรา</a>
+</nav>
+<!-- Right Action Icons -->
+<div class="flex items-center space-x-4 sm:space-x-5 text-stone-700">
+<!-- Search -->
+<button aria-label="ค้นหาสินค้า" class="p-2 hover:text-brand-600 hover:bg-pink-50 rounded-full transition-colors">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<!-- Account -->
+<button aria-label="บัญชีผู้ใช้" class="p-2 hover:text-brand-600 hover:bg-pink-50 rounded-full transition-colors">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<!-- Wishlist -->
+<button aria-label="รายการโปรด" class="p-2 hover:text-brand-600 hover:bg-pink-50 rounded-full transition-colors">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<!-- Cart with badge -->
+<button aria-label="ตะกร้าสินค้า" class="relative p-2 hover:text-brand-600 hover:bg-pink-50 rounded-full transition-colors">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="absolute 1 top-0.5 right-0.5 bg-brand-500 text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center border-2 border-white">
+            2
+          </span>
+</button>
+</div>
+</div>
+</header>
+<!-- END: MainHeader -->
+<!-- BEGIN: MainContent -->
+<main class="flex-grow">
+<!-- BEGIN: HeroSection -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-2" data-purpose="hero">
+<div class="relative overflow-hidden rounded-[2.5rem] soft-pink-gradient border border-pink-200/70 p-8 sm:p-12 lg:p-14 shadow-sm">
+<!-- Decorative subtle floating sparkles & hearts -->
+<div class="absolute top-10 left-1/3 text-pink-300 opacity-60 text-xl pointer-events-none select-none">✦</div>
+<div class="absolute bottom-16 left-1/4 text-pink-300 opacity-50 text-2xl pointer-events-none select-none">♡</div>
+<div class="absolute top-8 right-1/4 text-pink-300 opacity-50 text-sm pointer-events-none select-none">✦</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+<!-- Left Content Banner Column -->
+<div class="lg:col-span-6 space-y-5">
+<div class="inline-flex items-center gap-1.5 bg-white/80 border border-brand-200 text-brand-600 px-3.5 py-1 rounded-full text-xs font-semibold uppercase tracking-wider shadow-sm backdrop-blur-sm">
+<span class="text-xs">✦</span> NEW COLLECTION
+            </div>
+<h1 class="text-4xl sm:text-5xl lg:text-6xl font-serif-brand font-bold text-brand-600 tracking-tight leading-tight">
+              Jan Fashion
+            </h1>
+<div class="flex items-center gap-2 text-stone-800 font-semibold text-lg sm:text-xl">
+<span>แฟชั่นที่ใช่ สไตล์ที่เป็นคุณ</span>
+<span class="text-brand-500 text-base">♡</span>
+</div>
+<p class="text-stone-600 text-sm sm:text-base leading-relaxed max-w-md">
+              รวมเสื้อผ้าแฟชั่นสุดน่ารัก คุณภาพดี ใส่สบาย ในราคาที่จับต้องได้ เพื่อให้ทุกวันของคุณเปล่งประกาย
+            </p>
+<div class="pt-2">
+<a class="inline-flex items-center gap-2.5 bg-brand-accent hover:bg-brand-600 text-white font-medium text-sm sm:text-base px-8 py-3.5 rounded-full shadow-lg shadow-pink-400/30 hover:shadow-pink-500/40 hover:-translate-y-0.5 transition-all" href="#">
+<span>ช้อปเลยตอนนี้</span>
+<span class="text-lg leading-none">→</span>
+</a>
+</div>
+</div>
+<!-- Right Visual Model & Wardrobe Column -->
+<div class="lg:col-span-6 flex justify-center lg:justify-end">
+<div class="relative w-full max-w-lg aspect-[4/3] rounded-3xl overflow-hidden shadow-inner border border-white/60 bg-gradient-to-tr from-pink-200 via-rose-100 to-white flex items-center justify-center">
+<!-- Subtle decorative rack & aesthetic clothing display -->
+<div class="absolute inset-0 flex items-center justify-center p-4">
+<div class="relative w-full h-full rounded-2xl overflow-hidden flex items-end justify-center bg-gradient-to-t from-pink-200/80 via-transparent to-transparent">
+<!-- Stylized Illustration of Chic Fashion Model & Clothing Rack -->
+<div class="flex items-center justify-center w-full h-full gap-2">
+<!-- Model figure representation -->
+<div class="relative z-10 w-44 sm:w-52 h-full flex flex-col items-center justify-end">
+<div class="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-rose-100 border-2 border-white shadow-sm overflow-hidden mb-1 flex items-center justify-center">
+<svg class="w-16 h-16 text-rose-300" fill="currentColor" viewbox="0 0 24 24">
+<path d="M12 2a5 5 0 0 1 5 5v1a5 5 0 0 1-10 0V7a5 5 0 0 1 5-5zm0 13c4.42 0 8 2.69 8 6v1H4v-1c0-3.31 3.58-6 8-6z"></path>
+</svg>
+</div>
+<div class="w-28 sm:w-36 h-36 sm:h-44 bg-pink-300/80 rounded-t-3xl border-t-2 border-white shadow-md flex items-center justify-center">
+<span class="text-white text-xs font-serif-brand italic">Jan Chic Wear</span>
+</div>
+</div>
+<!-- Wardrobe pastel hanger rack mock -->
+<div class="hidden sm:flex flex-col items-center h-full justify-end pb-3 opacity-90">
+<div class="h-1 w-48 bg-pink-300 rounded-full mb-1"></div>
+<div class="flex gap-2 items-start h-40">
+<div class="w-8 h-32 bg-pink-200 rounded-lg shadow-sm"></div>
+<div class="w-8 h-36 bg-rose-200 rounded-lg shadow-sm"></div>
+<div class="w-8 h-28 bg-pink-100 rounded-lg shadow-sm"></div>
+<div class="w-8 h-36 bg-brand-200 rounded-lg shadow-sm"></div>
+<div class="w-8 h-32 bg-rose-100 rounded-lg shadow-sm"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Floating badge over image -->
+<div class="absolute bottom-4 left-4 bg-white/90 backdrop-blur-md px-4 py-2 rounded-2xl shadow-sm border border-pink-100 flex items-center gap-2 text-xs font-semibold text-brand-600">
+<span>🌸</span>
+<span>คอลเลกชันใหม่ล่าสุด 2024</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: HeroSection -->
+<!-- BEGIN: QuickServicesRow -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-2 mb-10" data-purpose="service-highlights">
+<div class="bg-white rounded-2xl shadow-sm border border-pink-100 p-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Service 1: Free Shipping -->
+<div class="flex items-center gap-3.5 px-2">
+<div class="w-11 h-11 rounded-full bg-pink-50 flex items-center justify-center text-brand-500 shrink-0">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M8 17a2 2 0 100-4 2 2 0 000 4zm10 0a2 2 0 100-4 2 2 0 000 4zM5 8h10l3 4v5H4V8z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+</div>
+<div>
+<h4 class="text-sm font-semibold text-stone-800">จัดส่งฟรี</h4>
+<p class="text-xs text-stone-500">เมื่อสั่งซื้อครบ 990.-</p>
+</div>
+</div>
+<!-- Service 2: Easy Return -->
+<div class="flex items-center gap-3.5 px-2">
+<div class="w-11 h-11 rounded-full bg-pink-50 flex items-center justify-center text-brand-500 shrink-0">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+</div>
+<div>
+<h4 class="text-sm font-semibold text-stone-800">เปลี่ยน/คืนสินค้า</h4>
+<p class="text-xs text-stone-500">ภายใน 7 วัน</p>
+</div>
+</div>
+<!-- Service 3: Secure Payment -->
+<div class="flex items-center gap-3.5 px-2">
+<div class="w-11 h-11 rounded-full bg-pink-50 flex items-center justify-center text-brand-500 shrink-0">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+</div>
+<div>
+<h4 class="text-sm font-semibold text-stone-800">ชำระเงินปลอดภัย</h4>
+<p class="text-xs text-stone-500">มั่นใจได้ 100%</p>
+</div>
+</div>
+<!-- Service 4: Customer Support -->
+<div class="flex items-center gap-3.5 px-2">
+<div class="w-11 h-11 rounded-full bg-pink-50 flex items-center justify-center text-brand-500 shrink-0">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+</div>
+<div>
+<h4 class="text-sm font-semibold text-stone-800">บริการลูกค้า</h4>
+<p class="text-xs text-stone-500">ตอบไว ใส่ใจทุกออเดอร์</p>
+</div>
+</div>
+</div>
+</section>
+<!-- END: QuickServicesRow -->
+<!-- BEGIN: CategoriesSection -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6" data-purpose="categories-list">
+<div class="flex items-center gap-2 mb-6">
+<h2 class="text-xl font-bold text-stone-800 tracking-tight">ช้อปตามหมวดหมู่</h2>
+<span class="text-brand-500">♡</span>
+</div>
+<!-- Categories Circle Grid -->
+<div class="grid grid-cols-4 sm:grid-cols-7 gap-4 sm:gap-6 justify-items-center">
+<!-- Category 1: เสื้อ -->
+<a class="group flex flex-col items-center" href="#">
+<div class="w-20 h-20 sm:w-24 sm:h-24 rounded-full p-1 border-2 border-pink-200 group-hover:border-brand-500 group-hover:shadow-md transition-all flex items-center justify-center bg-pink-50 overflow-hidden">
+<div class="w-full h-full rounded-full bg-rose-100 flex items-center justify-center text-brand-600 font-serif-brand">
+<svg class="w-8 h-8 text-brand-400 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M16 4v3m-8-3v3m-4 2l4-2 4 3 4-3 4 2 1 12H3L4 9z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"></path>
+</svg>
+</div>
+</div>
+<span class="mt-2.5 text-xs sm:text-sm font-medium text-stone-700 group-hover:text-brand-600 transition-colors">เสื้อ</span>
+</a>
+<!-- Category 2: กางเกง -->
+<a class="group flex flex-col items-center" href="#">
+<div class="w-20 h-20 sm:w-24 sm:h-24 rounded-full p-1 border-2 border-pink-200 group-hover:border-brand-500 group-hover:shadow-md transition-all flex items-center justify-center bg-pink-50 overflow-hidden">
+<div class="w-full h-full rounded-full bg-rose-100 flex items-center justify-center text-brand-600">
+<svg class="w-8 h-8 text-brand-400 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M6 3h12l-1 18H7L6 3zm3 0v18m6-18v18" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"></path>
+</svg>
+</div>
+</div>
+<span class="mt-2.5 text-xs sm:text-sm font-medium text-stone-700 group-hover:text-brand-600 transition-colors">กางเกง</span>
+</a>
+<!-- Category 3: เดรส -->
+<a class="group flex flex-col items-center" href="#">
+<div class="w-20 h-20 sm:w-24 sm:h-24 rounded-full p-1 border-2 border-pink-200 group-hover:border-brand-500 group-hover:shadow-md transition-all flex items-center justify-center bg-pink-50 overflow-hidden">
+<div class="w-full h-full rounded-full bg-rose-100 flex items-center justify-center text-brand-600">
+<svg class="w-8 h-8 text-brand-400 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 3a2 2 0 00-2 2v2l-3 4 2 10h10l2-10-3-4V5a2 2 0 00-2-2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"></path>
+</svg>
+</div>
+</div>
+<span class="mt-2.5 text-xs sm:text-sm font-medium text-stone-700 group-hover:text-brand-600 transition-colors">เดรส</span>
+</a>
+<!-- Category 4: เสื้อคลุม -->
+<a class="group flex flex-col items-center" href="#">
+<div class="w-20 h-20 sm:w-24 sm:h-24 rounded-full p-1 border-2 border-pink-200 group-hover:border-brand-500 group-hover:shadow-md transition-all flex items-center justify-center bg-pink-50 overflow-hidden">
+<div class="w-full h-full rounded-full bg-rose-100 flex items-center justify-center text-brand-600">
+<svg class="w-8 h-8 text-brand-400 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M9 3v4M15 3v4M5 7h14l-2 14H7L5 7zm7 0v14" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"></path>
+</svg>
+</div>
+</div>
+<span class="mt-2.5 text-xs sm:text-sm font-medium text-stone-700 group-hover:text-brand-600 transition-colors">เสื้อคลุม</span>
+</a>
+<!-- Category 5: กระเป๋า -->
+<a class="group flex flex-col items-center" href="#">
+<div class="w-20 h-20 sm:w-24 sm:h-24 rounded-full p-1 border-2 border-pink-200 group-hover:border-brand-500 group-hover:shadow-md transition-all flex items-center justify-center bg-pink-50 overflow-hidden">
+<div class="w-full h-full rounded-full bg-rose-100 flex items-center justify-center text-brand-600">
+<svg class="w-8 h-8 text-brand-400 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"></path>
+</svg>
+</div>
+</div>
+<span class="mt-2.5 text-xs sm:text-sm font-medium text-stone-700 group-hover:text-brand-600 transition-colors">กระเป๋า</span>
+</a>
+<!-- Category 6: แอคเซสเซอรี่ -->
+<a class="group flex flex-col items-center" href="#">
+<div class="w-20 h-20 sm:w-24 sm:h-24 rounded-full p-1 border-2 border-pink-200 group-hover:border-brand-500 group-hover:shadow-md transition-all flex items-center justify-center bg-pink-50 overflow-hidden">
+<div class="w-full h-full rounded-full bg-rose-100 flex items-center justify-center text-brand-600">
+<svg class="w-8 h-8 text-brand-400 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"></path>
+</svg>
+</div>
+</div>
+<span class="mt-2.5 text-xs sm:text-sm font-medium text-stone-700 group-hover:text-brand-600 transition-colors">แอคเซสเซอรี่</span>
+</a>
+<!-- Category 7: สินค้าลดราคา (SALE) -->
+<a class="group flex flex-col items-center" href="#">
+<div class="w-20 h-20 sm:w-24 sm:h-24 rounded-full p-1 border-2 border-brand-400 group-hover:border-brand-600 group-hover:shadow-md transition-all flex items-center justify-center bg-pink-50 overflow-hidden">
+<div class="w-full h-full rounded-full bg-gradient-to-tr from-brand-500 to-rose-400 flex items-center justify-center text-white font-bold text-sm sm:text-base tracking-wider shadow-inner group-hover:scale-105 transition-transform">
+              SALE
+            </div>
+</div>
+<span class="mt-2.5 text-xs sm:text-sm font-semibold text-brand-600 group-hover:underline">สินค้าลดราคา</span>
+</a>
+</div>
+</section>
+<!-- END: CategoriesSection -->
+<!-- BEGIN: NewArrivalsSection -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8" data-purpose="new-arrivals">
+<div class="flex items-center justify-between mb-6">
+<div class="flex items-center gap-2">
+<h2 class="text-xl sm:text-2xl font-bold text-stone-800 tracking-tight">New Arrivals</h2>
+<span class="text-brand-500">♡</span>
+</div>
+<a class="text-sm font-medium text-stone-600 hover:text-brand-600 flex items-center gap-1 transition-colors" href="#">
+          ดูทั้งหมด <span>→</span>
+</a>
+</div>
+<!-- 5-Column Product Grid -->
+<div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-5">
+<!-- Product 1 -->
+<div class="group bg-white rounded-2xl border border-pink-100 overflow-hidden hover:shadow-lg hover:border-pink-300 transition-all flex flex-col">
+<div class="relative aspect-square bg-rose-50 overflow-hidden flex items-center justify-center">
+<!-- Badge -->
+<span class="absolute top-2.5 left-2.5 bg-brand-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full z-10">NEW</span>
+<!-- Wishlist Button -->
+<button aria-label="Add to Wishlist" class="absolute top-2.5 right-2.5 w-7 h-7 bg-white/80 rounded-full flex items-center justify-center text-stone-400 hover:text-brand-500 hover:bg-white shadow-sm transition-colors z-10">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<div class="w-3/4 h-3/4 bg-pink-100 rounded-xl group-hover:scale-105 transition-transform flex items-center justify-center text-pink-300">
+<svg class="w-16 h-16" fill="currentColor" viewbox="0 0 24 24">
+<path d="M12 2a4 4 0 0 0-4 4v1H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3V6a4 4 0 0 0-4-4zm0 2a2 2 0 0 1 2 2v1h-4V6a2 2 0 0 1 2-2z"></path>
+</svg>
+</div>
+</div>
+<div class="p-3.5 flex flex-col flex-grow justify-between">
+<div>
+<h3 class="text-xs sm:text-sm font-medium text-stone-800 group-hover:text-brand-600 transition-colors line-clamp-1">Off-shoulder Knit Top</h3>
+<p class="text-[11px] text-stone-400 mt-0.5">เสื้อไหมพรมปาดไหล่</p>
+</div>
+<div class="mt-2.5 flex items-baseline justify-between">
+<span class="text-brand-600 font-bold text-sm sm:text-base">฿590</span>
+<span class="text-[11px] text-stone-400 line-through">฿790</span>
+</div>
+</div>
+</div>
+<!-- Product 2 -->
+<div class="group bg-white rounded-2xl border border-pink-100 overflow-hidden hover:shadow-lg hover:border-pink-300 transition-all flex flex-col">
+<div class="relative aspect-square bg-rose-50 overflow-hidden flex items-center justify-center">
+<span class="absolute top-2.5 left-2.5 bg-brand-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full z-10">NEW</span>
+<button aria-label="Add to Wishlist" class="absolute top-2.5 right-2.5 w-7 h-7 bg-white/80 rounded-full flex items-center justify-center text-stone-400 hover:text-brand-500 hover:bg-white shadow-sm transition-colors z-10">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<div class="w-3/4 h-3/4 bg-pink-100 rounded-xl group-hover:scale-105 transition-transform flex items-center justify-center text-pink-300">
+<svg class="w-16 h-16" fill="currentColor" viewbox="0 0 24 24">
+<path d="M6 3h12l-1 18H7L6 3zm3 0v18m6-18v18"></path>
+</svg>
+</div>
+</div>
+<div class="p-3.5 flex flex-col flex-grow justify-between">
+<div>
+<h3 class="text-xs sm:text-sm font-medium text-stone-800 group-hover:text-brand-600 transition-colors line-clamp-1">Wide Leg Pants</h3>
+<p class="text-[11px] text-stone-400 mt-0.5">กางเกงขายาวทรงกระบอก</p>
+</div>
+<div class="mt-2.5 flex items-baseline justify-between">
+<span class="text-brand-600 font-bold text-sm sm:text-base">฿690</span>
+<span class="text-[11px] text-stone-400 line-through">฿890</span>
+</div>
+</div>
+</div>
+<!-- Product 3 -->
+<div class="group bg-white rounded-2xl border border-pink-100 overflow-hidden hover:shadow-lg hover:border-pink-300 transition-all flex flex-col">
+<div class="relative aspect-square bg-rose-50 overflow-hidden flex items-center justify-center">
+<span class="absolute top-2.5 left-2.5 bg-brand-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full z-10">NEW</span>
+<button aria-label="Add to Wishlist" class="absolute top-2.5 right-2.5 w-7 h-7 bg-white/80 rounded-full flex items-center justify-center text-stone-400 hover:text-brand-500 hover:bg-white shadow-sm transition-colors z-10">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<div class="w-3/4 h-3/4 bg-pink-100 rounded-xl group-hover:scale-105 transition-transform flex items-center justify-center text-pink-300">
+<svg class="w-16 h-16" fill="currentColor" viewbox="0 0 24 24">
+<path d="M12 3a2 2 0 00-2 2v2l-3 4 2 10h10l2-10-3-4V5a2 2 0 00-2-2z"></path>
+</svg>
+</div>
+</div>
+<div class="p-3.5 flex flex-col flex-grow justify-between">
+<div>
+<h3 class="text-xs sm:text-sm font-medium text-stone-800 group-hover:text-brand-600 transition-colors line-clamp-1">Floral Mini Dress</h3>
+<p class="text-[11px] text-stone-400 mt-0.5">มินิเดรสลายดอกไม้น่ารัก</p>
+</div>
+<div class="mt-2.5 flex items-baseline justify-between">
+<span class="text-brand-600 font-bold text-sm sm:text-base">฿790</span>
+<span class="text-[11px] text-stone-400 line-through">฿990</span>
+</div>
+</div>
+</div>
+<!-- Product 4 -->
+<div class="group bg-white rounded-2xl border border-pink-100 overflow-hidden hover:shadow-lg hover:border-pink-300 transition-all flex flex-col">
+<div class="relative aspect-square bg-rose-50 overflow-hidden flex items-center justify-center">
+<span class="absolute top-2.5 left-2.5 bg-brand-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full z-10">NEW</span>
+<button aria-label="Add to Wishlist" class="absolute top-2.5 right-2.5 w-7 h-7 bg-white/80 rounded-full flex items-center justify-center text-stone-400 hover:text-brand-500 hover:bg-white shadow-sm transition-colors z-10">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<div class="w-3/4 h-3/4 bg-pink-100 rounded-xl group-hover:scale-105 transition-transform flex items-center justify-center text-pink-300">
+<svg class="w-16 h-16" fill="currentColor" viewbox="0 0 24 24">
+<path d="M16 4v3m-8-3v3m-4 2l4-2 4 3 4-3 4 2 1 12H3L4 9z"></path>
+</svg>
+</div>
+</div>
+<div class="p-3.5 flex flex-col flex-grow justify-between">
+<div>
+<h3 class="text-xs sm:text-sm font-medium text-stone-800 group-hover:text-brand-600 transition-colors line-clamp-1">Soft Knit Cardigan</h3>
+<p class="text-[11px] text-stone-400 mt-0.5">เสื้อคลุมคาร์ดิแกนผ้านุ่ม</p>
+</div>
+<div class="mt-2.5 flex items-baseline justify-between">
+<span class="text-brand-600 font-bold text-sm sm:text-base">฿590</span>
+<span class="text-[11px] text-stone-400 line-through">฿750</span>
+</div>
+</div>
+</div>
+<!-- Product 5 -->
+<div class="group bg-white rounded-2xl border border-pink-100 overflow-hidden hover:shadow-lg hover:border-pink-300 transition-all flex flex-col">
+<div class="relative aspect-square bg-rose-50 overflow-hidden flex items-center justify-center">
+<span class="absolute top-2.5 left-2.5 bg-brand-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full z-10">NEW</span>
+<button aria-label="Add to Wishlist" class="absolute top-2.5 right-2.5 w-7 h-7 bg-white/80 rounded-full flex items-center justify-center text-stone-400 hover:text-brand-500 hover:bg-white shadow-sm transition-colors z-10">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<div class="w-3/4 h-3/4 bg-pink-100 rounded-xl group-hover:scale-105 transition-transform flex items-center justify-center text-pink-300">
+<svg class="w-16 h-16" fill="currentColor" viewbox="0 0 24 24">
+<path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+</svg>
+</div>
+</div>
+<div class="p-3.5 flex flex-col flex-grow justify-between">
+<div>
+<h3 class="text-xs sm:text-sm font-medium text-stone-800 group-hover:text-brand-600 transition-colors line-clamp-1">Canvas Tote Bag</h3>
+<p class="text-[11px] text-stone-400 mt-0.5">กระเป๋าผ้าแคนวาสสีชมพูพาสเทล</p>
+</div>
+<div class="mt-2.5 flex items-baseline justify-between">
+<span class="text-brand-600 font-bold text-sm sm:text-base">฿390</span>
+<span class="text-[11px] text-stone-400 line-through">฿550</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: NewArrivalsSection -->
+<!-- BEGIN: PromotionalBanners -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6" data-purpose="promotional-banners">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Promo 1: Special Offer 30% OFF -->
+<div class="relative overflow-hidden rounded-3xl bg-gradient-to-r from-pink-50 to-rose-100 border border-pink-200/80 p-6 sm:p-8 flex items-center justify-between shadow-sm">
+<div class="space-y-3 z-10 max-w-[65%]">
+<span class="inline-block bg-white text-brand-600 text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-sm">
+              SPECIAL OFFER
+            </span>
+<h3 class="text-2xl sm:text-3xl font-extrabold text-brand-600 tracking-tight">
+              ลดสูงสุด 30%
+            </h3>
+<p class="text-xs sm:text-sm text-stone-600">
+              เฉพาะสินค้าที่ร่วมรายการ
+            </p>
+<div class="pt-1">
+<a class="inline-flex items-center gap-2 bg-brand-accent hover:bg-brand-600 text-white text-xs sm:text-sm font-semibold px-5 py-2.5 rounded-full shadow-md transition-all" href="#">
+<span>ช้อปเลย</span>
+<span>→</span>
+</a>
+</div>
+</div>
+<!-- Decorative Shopping Graphic/Illustration -->
+<div class="relative w-28 h-28 sm:w-36 sm:h-36 flex items-center justify-center shrink-0">
+<div class="absolute inset-0 bg-pink-300/30 rounded-full blur-xl"></div>
+<!-- Shopping bags mockup -->
+<div class="relative flex items-center justify-center">
+<div class="w-16 h-20 bg-brand-400 rounded-lg shadow-md rotate-[-8deg] flex items-center justify-center text-white text-xs font-bold border-t-2 border-white/50">
+                JAN
+              </div>
+<div class="w-16 h-20 bg-brand-300 rounded-lg shadow-md rotate-[12deg] -ml-6 flex items-center justify-center text-white text-xs font-bold border-t-2 border-white/50">
+                ♡
+              </div>
+</div>
+</div>
+</div>
+<!-- Promo 2: Member Special 100 THB Discount Voucher -->
+<div class="relative overflow-hidden rounded-3xl bg-gradient-to-r from-rose-50 to-pink-100 border border-pink-200/80 p-6 sm:p-8 flex items-center justify-between shadow-sm">
+<div class="space-y-3 z-10 max-w-[55%]">
+<span class="inline-block bg-white text-brand-600 text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-sm">
+              MEMBER SPECIAL
+            </span>
+<h3 class="text-xl sm:text-2xl font-bold text-stone-800 leading-snug">
+              สมัครสมาชิกวันนี้<br/>
+<span class="text-brand-600">รับส่วนลดทันที 100 บาท</span>
+</h3>
+<div class="pt-1">
+<a class="inline-flex items-center gap-2 bg-brand-accent hover:bg-brand-600 text-white text-xs sm:text-sm font-semibold px-5 py-2.5 rounded-full shadow-md transition-all" href="#">
+<span>สมัครเลย</span>
+<span>→</span>
+</a>
+</div>
+</div>
+<!-- Coupon Voucher Ticket Graphic -->
+<div class="relative shrink-0">
+<div class="bg-white border border-pink-200 rounded-xl px-4 py-3 shadow-md rotate-3 flex flex-col items-center justify-center min-w-[140px] coupon-border">
+<div class="flex items-center gap-1 text-amber-400 text-xs mb-0.5">
+<span>👑</span>
+<span class="text-[9px] font-bold tracking-widest text-stone-400 uppercase">WELCOME</span>
+</div>
+<div class="text-2xl font-black text-brand-600 tracking-tight">
+                100.-
+              </div>
+<div class="text-[9px] font-semibold text-stone-400 tracking-wider uppercase mt-0.5">
+                WELCOME COUPON
+              </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: PromotionalBanners -->
+<!-- BEGIN: ValuePropositionBanner -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10" data-purpose="value-propositions">
+<div class="text-center mb-8">
+<h2 class="text-xl sm:text-2xl font-bold text-stone-800 inline-flex items-center gap-2">
+<span>ทำไมต้องช้อปกับ Jan Fashion</span>
+<span class="text-brand-500">♡</span>
+</h2>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+<!-- Feature 1 -->
+<div class="bg-white rounded-2xl p-5 border border-pink-100 flex items-center gap-3.5 shadow-sm hover:shadow transition-shadow">
+<div class="w-10 h-10 rounded-full bg-pink-50 flex items-center justify-center text-brand-500 shrink-0">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<div>
+<h4 class="text-sm font-semibold text-stone-800">สินค้าคุณภาพ</h4>
+<p class="text-xs text-stone-500">คัดสรรมาอย่างดี</p>
+</div>
+</div>
+<!-- Feature 2 -->
+<div class="bg-white rounded-2xl p-5 border border-pink-100 flex items-center gap-3.5 shadow-sm hover:shadow transition-shadow">
+<div class="w-10 h-10 rounded-full bg-pink-50 flex items-center justify-center text-brand-500 shrink-0">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<div>
+<h4 class="text-sm font-semibold text-stone-800">ราคาน่ารัก</h4>
+<p class="text-xs text-stone-500">คุ้มค่าทุกการช้อป</p>
+</div>
+</div>
+<!-- Feature 3 -->
+<div class="bg-white rounded-2xl p-5 border border-pink-100 flex items-center gap-3.5 shadow-sm hover:shadow transition-shadow">
+<div class="w-10 h-10 rounded-full bg-pink-50 flex items-center justify-center text-brand-500 shrink-0">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<div>
+<h4 class="text-sm font-semibold text-stone-800">อัปเดตเทรนด์</h4>
+<p class="text-xs text-stone-500">แฟชั่นมาใหม่ทุกสัปดาห์</p>
+</div>
+</div>
+<!-- Feature 4 -->
+<div class="bg-white rounded-2xl p-5 border border-pink-100 flex items-center gap-3.5 shadow-sm hover:shadow transition-shadow">
+<div class="w-10 h-10 rounded-full bg-pink-50 flex items-center justify-center text-brand-500 shrink-0">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<div>
+<h4 class="text-sm font-semibold text-stone-800">แพ็กเกจสวย</h4>
+<p class="text-xs text-stone-500">ใส่ใจทุกรายละเอียด</p>
+</div>
+</div>
+</div>
+</section>
+<!-- END: ValuePropositionBanner -->
+</main>
+<!-- END: MainContent -->
+<!-- BEGIN: SiteFooter -->
+<footer class="bg-[#fdf2f4] border-t border-pink-200/80 pt-12 pb-6 text-stone-700" data-purpose="footer">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<!-- Main Footer Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 pb-10 border-b border-pink-200">
+<!-- Brand Summary Column -->
+<div class="lg:col-span-4 space-y-4">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-full border-2 border-brand-300 flex items-center justify-center bg-white p-1">
+<span class="font-serif-brand italic font-bold text-sm text-brand-600">Jan</span>
+</div>
+<div>
+<span class="font-serif-brand text-xl font-bold tracking-tight text-brand-600 block leading-none">Jan Fashion</span>
+<span class="text-[9px] uppercase tracking-widest text-brand-400 font-semibold">STYLE FOR YOU</span>
+</div>
+</div>
+<p class="text-xs text-stone-600 leading-relaxed max-w-sm">
+            ร้านเสื้อผ้าแฟชั่นสำหรับผู้หญิง สวย น่ารัก ใส่สบาย มีสไตล์ในแบบคุณ คัดสรรเสื้อผ้าคุณภาพดีเพื่อสาวๆ ยุคใหม่
+          </p>
+<!-- Social links -->
+<div class="flex items-center space-x-3 pt-1 text-brand-600">
+<a class="w-8 h-8 rounded-full bg-white border border-pink-200 flex items-center justify-center hover:bg-brand-500 hover:text-white transition-colors" href="#" title="Instagram">
+<svg class="w-4 h-4" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
+</a>
+<a class="w-8 h-8 rounded-full bg-white border border-pink-200 flex items-center justify-center hover:bg-brand-500 hover:text-white transition-colors" href="#" title="TikTok">
+<svg class="w-4 h-4" fill="currentColor" viewbox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.298-.002.595.042.88.13V9.4a6.33 6.33 0 0 0-1-.08A6.34 6.34 0 0 0 3 15.66a6.34 6.34 0 0 0 10.78 4.54 6.27 6.27 0 0 0 1.86-4.48V8.71a8.17 8.17 0 0 0 4.95 1.67V6.93a4.78 4.78 0 0 1-1-.24z"></path></svg>
+</a>
+<a class="w-8 h-8 rounded-full bg-white border border-pink-200 flex items-center justify-center hover:bg-brand-500 hover:text-white transition-colors" href="#" title="Line">
+<svg class="w-4 h-4" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2C6.48 2 2 5.92 2 10.75c0 2.88 1.63 5.43 4.14 7.01.2.13.33.36.35.6l.08 2.05a.75.75 0 0 0 1.15.63l2.84-1.72a.84.84 0 0 1 .47-.14c.32.05.65.07.97.07 5.52 0 10-3.92 10-8.75S17.52 2 12 2z"></path></svg>
+</a>
+<a class="w-8 h-8 rounded-full bg-white border border-pink-200 flex items-center justify-center hover:bg-brand-500 hover:text-white transition-colors" href="#" title="Facebook">
+<svg class="w-4 h-4" fill="currentColor" viewbox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"></path></svg>
+</a>
+</div>
+</div>
+<!-- Col 1: เมนู -->
+<div class="lg:col-span-2 space-y-3">
+<h4 class="text-sm font-semibold text-stone-900">เมนู</h4>
+<ul class="space-y-2 text-xs text-stone-600">
+<li><a class="hover:text-brand-600 transition-colors" href="#">หน้าแรก</a></li>
+<li><a class="hover:text-brand-600 transition-colors" href="#">สินค้าใหม่</a></li>
+<li><a class="hover:text-brand-600 transition-colors" href="#">หมวดหมู่สินค้า</a></li>
+<li><a class="hover:text-brand-600 transition-colors" href="#">โปรโมชั่น</a></li>
+<li><a class="hover:text-brand-600 transition-colors" href="#">รีวิวลูกค้า</a></li>
+<li><a class="hover:text-brand-600 transition-colors" href="#">ติดต่อเรา</a></li>
+</ul>
+</div>
+<!-- Col 2: ช่วยเหลือ -->
+<div class="lg:col-span-2 space-y-3">
+<h4 class="text-sm font-semibold text-stone-900">ช่วยเหลือ</h4>
+<ul class="space-y-2 text-xs text-stone-600">
+<li><a class="hover:text-brand-600 transition-colors" href="#">คำถามที่พบบ่อย</a></li>
+<li><a class="hover:text-brand-600 transition-colors" href="#">วิธีการสั่งซื้อ</a></li>
+<li><a class="hover:text-brand-600 transition-colors" href="#">การชำระเงิน</a></li>
+<li><a class="hover:text-brand-600 transition-colors" href="#">การจัดส่งสินค้า</a></li>
+<li><a class="hover:text-brand-600 transition-colors" href="#">การเปลี่ยน/คืนสินค้า</a></li>
+</ul>
+</div>
+<!-- Col 3: ติดต่อเรา -->
+<div class="lg:col-span-4 space-y-3">
+<h4 class="text-sm font-semibold text-stone-900">ติดต่อเรา</h4>
+<div class="space-y-2.5 text-xs text-stone-600">
+<div class="flex items-center gap-2">
+<svg class="w-4 h-4 text-brand-500 shrink-0" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<span>090-123-4567</span>
+</div>
+<div class="flex items-center gap-2">
+<svg class="w-4 h-4 text-brand-500 shrink-0" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<span>janfashion.store@gmail.com</span>
+</div>
+<div class="flex items-start gap-2">
+<svg class="w-4 h-4 text-brand-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<div>
+<p>จันทร์ - ศุกร์ 09.00 - 18.00 น.</p>
+<p>เสาร์ - อาทิตย์ 10.00 - 17.00 น.</p>
+</div>
+</div>
+<div class="flex items-start gap-2">
+<svg class="w-4 h-4 text-brand-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<span>123/45 ถนนแฟชั่น แขวงสยาม เขตปทุมวัน กรุงเทพฯ 10330</span>
+</div>
+</div>
+<!-- Newsletter Email Subscription -->
+<div class="pt-2">
+<h5 class="text-xs font-semibold text-stone-800 mb-2">รับข่าวสารและโปรโมชั่นพิเศษก่อนใคร</h5>
+<form action="#" class="flex items-center gap-1.5" method="POST" onsubmit="event.preventDefault();">
+<input class="text-xs w-full px-3 py-2 bg-white border border-pink-200 rounded-lg focus:outline-none focus:border-brand-500 text-stone-700" placeholder="อีเมลของคุณ" type="email"/>
+<button class="shrink-0 bg-brand-accent hover:bg-brand-600 text-white text-xs font-medium px-4 py-2 rounded-lg transition-colors" type="submit">
+                สมัครรับข่าวสาร
+              </button>
+</form>
+</div>
+</div>
+</div>
+<!-- Copyright Bottom Bar -->
+<div class="pt-6 text-center text-xs text-stone-500">
+<p>© 2024 Jan Fashion. All rights reserved.</p>
+</div>
+</div>
+</footer>
+<!-- END: SiteFooter -->
+</body></html>
